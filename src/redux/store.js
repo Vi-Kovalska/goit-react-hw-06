@@ -16,13 +16,12 @@ const persistConfig = {
   key: "phonebook-persist",
   version: 1,
   storage,
-  whitelist: ["contacts"],
 };
 
 export const store = configureStore({
   reducer: {
     contacts: persistReducer(persistConfig, contactsReducer),
-    filters: persistReducer(persistConfig, filtersReducer),
+    filters: filtersReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
