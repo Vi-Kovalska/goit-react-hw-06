@@ -12,15 +12,15 @@ import {
   REGISTER,
 } from "redux-persist";
 import storage from "redux-persist/lib/storage";
-const persistConfig = {
-  key: "phonebook-persist",
+const contactsPersistConfig = {
+  key: "contacts-persist",
   version: 1,
   storage,
 };
 
 export const store = configureStore({
   reducer: {
-    contacts: persistReducer(persistConfig, contactsReducer),
+    contacts: persistReducer(contactsPersistConfig, contactsReducer),
     filters: filtersReducer,
   },
   middleware: (getDefaultMiddleware) =>
